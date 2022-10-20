@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'grappelli',
-    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,8 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs',
     'interview',
-    'bootstrap4',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -200,6 +203,5 @@ TEMPLATES = [
 ]
 
 
-ACCOUNT_ACTIVATION_DAYS = 0
-LOGIN_REDIRECT_URL = '/'
-SIMPLE_BACKEND_REDIRECT_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = '/login'

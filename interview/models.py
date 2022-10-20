@@ -105,7 +105,5 @@ class Candidate(models.Model):
             ("notify", "notify interviewer for candidate review"),
         ]
 
-
-    # Python 3 直接定义 __str__() 方法即可，系统使用这个方法来把对象转换成字符串
     def __str__(self):
         return self.username

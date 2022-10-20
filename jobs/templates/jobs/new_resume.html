@@ -1,0 +1,7 @@
+{% extends 'jobs/base.html' %} {% block title %}Login{% endblock %}
+{% load crispy_forms_tags %} {% block content %}
+<form method="post">
+  {% csrf_token %}{{form|crispy}}
+  <button type="submit" class="btn btn-success">resume</button>
+</form>
+{% endblock %}

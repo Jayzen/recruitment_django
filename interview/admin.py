@@ -90,6 +90,7 @@ class CandidateAdmin(admin.ModelAdmin):
         return group_names
 
     def get_readonly_fields(self, request, obj):
+        #如果当前用户在interviewer这个群组中，那么返回的两个字段只读
         group_names = self.get_group_names(request.user)
         if 'interviewer' in group_names:
             logger.info("interviewer is in user's group for %s" % request.user.username)
