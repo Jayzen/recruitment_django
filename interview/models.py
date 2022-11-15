@@ -96,9 +96,9 @@ class Candidate(models.Model):
     last_editor = models.CharField(max_length=256, blank=True, verbose_name=u'最后编辑者')
 
     class Meta:
-        db_table = u'candidate'
-        verbose_name = u'应聘者'
-        verbose_name_plural = u'应聘者'
+        db_table = 'candidate'
+        verbose_name = '应聘者'
+        verbose_name_plural = '应聘者'
 
         permissions = [
             ("export", "Can export candidate list"),

@@ -5,10 +5,7 @@ from django.db.models import Q
 from datetime import datetime
 from interview import candidate_field as cf
 import csv
-import logging
 
-
-logger = logging.getLogger(__name__)
 
 exportable_fields = ('username', 'city', 'phone', 'bachelor_school', 'master_school', 'degree', 'first_result',
                      'first_interviewer_user','second_result', 'second_interviewer_user', 'hr_result', 'hr_score',
@@ -36,17 +33,15 @@ def export_model_as_csv(modeladmin, request, queryset):
             field_value = field_object.value_from_object(obj)
             csv_line_values.append(field_value)
         writer.writerow(csv_line_values)
-
-    logger.error(" %s has exported %s candidate records" % (request.user.username, len(queryset)))
     return response
 
 
-export_model_as_csv.short_description = u'导出为CSV文件'
+export_model_as_csv.short_description = "导出为CSV文件"
 export_model_as_csv.allowed_permissions = ('export',)
 
 
 class CandidateAdmin(admin.ModelAdmin):
-    #生成到处的action
+    #生成导出的action
     actions = (export_model_as_csv,)
     #新生成的时候排除的字段
     exclude = ('creator', 'created_date', 'modified_date')
@@ -61,7 +56,7 @@ class CandidateAdmin(admin.ModelAdmin):
     list_filter = ('city','first_result','second_result','hr_result','first_interviewer_user',
                    'second_interviewer_user','hr_interviewer_user')
     #默认排序
-    # ordering = ('hr_result', 'second_result', 'first_result',)
+    ordering = ('hr_result', 'second_result', 'first_result',)
 
     # 当前用户是否有导出权限：
     def has_export_permission(self, request):
@@ -76,10 +71,7 @@ class CandidateAdmin(admin.ModelAdmin):
         return ()
 
     def get_changelist_instance(self, request):
-        """
-        override admin method and list_editable property value
-        with values returned by our custom method implementation.
-        """
+        #此函数是系统支持的，可以覆盖掉父类的list_editable的值，值由函数get_list_editable（）去生成
         self.list_editable = self.get_list_editable(request)
         return super(CandidateAdmin, self).get_changelist_instance(request)
 
@@ -93,7 +85,6 @@ class CandidateAdmin(admin.ModelAdmin):
         #如果当前用户在interviewer这个群组中，那么返回的两个字段只读
         group_names = self.get_group_names(request.user)
         if 'interviewer' in group_names:
-            logger.info("interviewer is in user's group for %s" % request.user.username)
             return ('first_interviewer_user', 'second_interviewer_user',)
         return ()
 
@@ -123,5 +114,6 @@ class CandidateAdmin(admin.ModelAdmin):
             obj.creator = request.user.username
         obj.modified_date = datetime.now()
         obj.save()
+
 
 admin.site.register(Candidate, CandidateAdmin)

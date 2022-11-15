@@ -31,6 +31,11 @@ class Job(models.Model):
     def __str__(self):
         return self.job_name
 
+    class Meta:
+        verbose_name="工作"
+        verbose_name_plural="工作列表"
+
+
 
 class Resume(models.Model):
     username = models.CharField(max_length=135, verbose_name=_('姓名'))
@@ -57,8 +62,8 @@ class Resume(models.Model):
     project_experience = models.TextField(max_length=1024, blank=True, verbose_name=u'项目经历')
 
     class Meta:
-        verbose_name = _('简历')
-        verbose_name_plural = _('简历列表')
+        verbose_name = "简历"
+        verbose_name_plural = "简历列表"
 
     def __str__(self):
         return self.username

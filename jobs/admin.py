@@ -30,9 +30,10 @@ def enter_interview_process(modeladmin, request, queryset):
 
 enter_interview_process.short_description = u"进入面试流程"
 
+
 class ResumeAdmin(admin.ModelAdmin):
     actions = (enter_interview_process,)
-    
+
     list_display = ('username', 'applicant', 'city', 'apply_position', 'bachelor_school', 'master_school',
                      'major','created_date')
     readonly_fields = ('applicant', 'created_date', 'modified_date',)
@@ -48,8 +49,6 @@ class ResumeAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.applicant = request.user
         super().save_model(request, obj, form, change)
-
-
 
 
 admin.site.register(Job, JobAdmin)

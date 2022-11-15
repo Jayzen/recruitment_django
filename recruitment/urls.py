@@ -15,13 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.utils.translation import gettext as _
+
 
 urlpatterns = [
-    path('grappelli/', include('grappelli.urls')),
     path("", include("jobs.urls")),
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
 ]
 
-admin.site.site_header = _('象科技招聘管理系统') #设置系统标题
+#网站admin后台的标题
+admin.site.site_header = '象科技招聘管理系统'

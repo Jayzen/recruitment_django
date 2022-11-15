@@ -16,8 +16,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 LOG_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(LOG_DIR)
-print(BASE_DIR)
+
+# print(os.path.dirname(BASE_DIR))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -156,14 +155,14 @@ LOGGING = {
             #'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': os.path.join(os.path.dirname(LOG_DIR), 'recruitment.admin.log'),
+            'filename': os.path.join(LOG_DIR, 'log','recruitment.admin.log'),
         },
 
         'performance': {
             #'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': os.path.join(os.path.dirname(LOG_DIR), 'recruitment.performance.log'),
+            'filename': os.path.join(LOG_DIR, 'log','recruitment.performance.log'),
         },
     },
 
