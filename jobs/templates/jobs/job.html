@@ -26,7 +26,7 @@
     </div>
 
     <div class="apply_position">
-        <input type="button" class="btn btn-primary" style="width:120px;" value="申请" onclick="location.href='/new-resume'"/>
+        <input type="button" class="btn btn-primary" style="width:120px;" value="申请" onclick="location.href='/new-resume?apply_position={{job.job_name}}&city={{job.city_name}}'"/>
     </div>
 {% else %}
     <p>职位不存在</p>

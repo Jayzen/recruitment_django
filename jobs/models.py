@@ -36,7 +36,6 @@ class Job(models.Model):
         verbose_name_plural="工作列表"
 
 
-
 class Resume(models.Model):
     username = models.CharField(max_length=135, verbose_name=_('姓名'))
     applicant = models.ForeignKey(User, verbose_name=_("申请人"), null=True, on_delete=models.SET_NULL)

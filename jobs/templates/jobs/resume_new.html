@@ -1,4 +1,4 @@
-{% extends 'jobs/base.html' %} {% block title %}Login{% endblock %}
+{% extends 'jobs/base.html' %} {% block title %}新建简历{% endblock %}
 {% load crispy_forms_tags %} {% block content %}
 <form method="post">
   {% csrf_token %}{{form|crispy}}

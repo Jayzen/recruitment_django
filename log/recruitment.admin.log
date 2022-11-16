@@ -31,3 +31,69 @@
 2022-11-15 15:32:54,878 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
 2022-11-15 15:33:16,807 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/interview/admin.py changed, reloading.
 2022-11-15 15:33:18,063 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 09:43:23,688 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 09:43:32,537 django.request 241 WARNING  Not Found: /
+2022-11-16 09:50:11,255 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 09:50:12,738 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 09:50:35,632 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/admin.py changed, reloading.
+2022-11-16 09:50:36,961 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 09:50:38,612 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/admin.py changed, reloading.
+2022-11-16 09:50:39,605 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 09:59:53,586 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 09:59:55,197 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:03:38,541 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:03:40,423 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:03:49,871 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:03:50,320 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:04:33,346 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:04:35,284 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:05:18,884 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/urls.py changed, reloading.
+2022-11-16 10:05:20,378 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:05:46,494 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:05:48,147 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:07:21,247 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:07:22,499 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:07:49,542 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:07:50,999 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:08:04,888 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:08:06,008 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:08:12,573 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/models.py changed, reloading.
+2022-11-16 10:08:13,161 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:08:30,741 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/views.py changed, reloading.
+2022-11-16 10:08:31,997 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:10:28,683 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/urls.py changed, reloading.
+2022-11-16 10:10:30,200 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:10:58,142 django.request 241 ERROR    Internal Server Error: /resumes/1/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: resume_detail() got an unexpected keyword argument 'pk'
+2022-11-16 10:11:56,044 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/urls.py changed, reloading.
+2022-11-16 10:11:57,308 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:12:03,536 django.request 241 WARNING  Not Found: /resumes/1/
+2022-11-16 10:12:11,915 django.request 241 WARNING  Not Found: /resumes/3/
+2022-11-16 10:16:05,785 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/recruitment/settings.py changed, reloading.
+2022-11-16 10:16:07,721 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:16:41,132 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/recruitment/urls.py changed, reloading.
+2022-11-16 10:16:41,596 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:16:49,050 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/recruitment/urls.py changed, reloading.
+2022-11-16 10:16:50,067 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:31:36,987 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/interview/admin.py changed, reloading.
+2022-11-16 10:31:40,115 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:31:56,763 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/interview/admin.py changed, reloading.
+2022-11-16 10:31:58,231 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:32:49,735 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/interview/admin.py changed, reloading.
+2022-11-16 10:32:51,133 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:34:04,534 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:34:28,903 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/interview/admin.py changed, reloading.
+2022-11-16 10:34:30,718 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 10:37:17,037 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/interview/admin.py changed, reloading.
+2022-11-16 10:37:18,660 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 14:01:42,996 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/admin.py changed, reloading.
+2022-11-16 14:01:44,652 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader
+2022-11-16 14:02:13,061 django.utils.autoreload 266 INFO     /Users/jayzen/Django_projects/recruitment/jobs/admin.py changed, reloading.
+2022-11-16 14:02:14,877 django.utils.autoreload 677 INFO     Watching for file changes with StatReloader

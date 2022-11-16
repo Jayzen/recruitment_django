@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.http import Http404
 from jobs.models import Job, Cities, JobTypes
 from .forms import RegisterForm, ResumeForm
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from jobs.models import Resume
 
 
 def joblist(request):
@@ -38,8 +39,13 @@ def sign_up(request):
 
     return render(request, 'registration/sign_up.html', {"form": form})
 
+
 @login_required(login_url="/login")
-def new_resume(request):
+def resume_new(request):
+    initial_data = {}
+    for x in request.GET:
+        initial_data[x] = request.GET[x]
+
     if request.method == 'POST':
         form = ResumeForm(request.POST)
         if form.is_valid():
@@ -48,6 +54,17 @@ def new_resume(request):
             resume.save()
             return redirect("/home")
     else:
-        form = ResumeForm()
+        form = ResumeForm(initial=initial_data)
 
-    return render(request, 'jobs/new_resume.html', {"form": form})
+    return render(request, 'jobs/resume_new.html', {"form": form})
+
+
+@login_required(login_url="/login")
+def resume_detail(request, resume_id):
+    try:
+        resume = Resume.objects.get(pk=resume_id)
+        content = "name: %s <br>  introduction: %s <br>" % (resume.username, resume.candidate_introduction)
+        return HttpResponse(content)
+    except Resume.DoesNotExist:
+        raise Http404("resume does not exist")
+

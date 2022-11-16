@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.db.models import Q
 from datetime import datetime
 from interview import candidate_field as cf
+from jobs.models import Resume
+from django.utils.safestring import mark_safe
 import csv
 
 
@@ -47,7 +49,7 @@ class CandidateAdmin(admin.ModelAdmin):
     exclude = ('creator', 'created_date', 'modified_date')
     #显示的字段
     list_display = (
-        'username', 'city', 'bachelor_school', 'first_score', 'first_result', 'first_interviewer_user',
+        'username', 'city', 'bachelor_school', 'get_resume', 'first_score', 'first_result', 'first_interviewer_user',
         'second_result', 'second_interviewer_user', 'hr_score', 'hr_result', 'hr_interviewer_user',
         'last_editor',)
     #待搜索的字段
@@ -56,7 +58,18 @@ class CandidateAdmin(admin.ModelAdmin):
     list_filter = ('city','first_result','second_result','hr_result','first_interviewer_user',
                    'second_interviewer_user','hr_interviewer_user')
     #默认排序
-    ordering = ('hr_result', 'second_result', 'first_result',)
+    #ordering = ('hr_result', 'second_result', 'first_result',)
+
+    def get_resume(self, obj):
+        if not obj.phone:
+            return ""
+        resumes = Resume.objects.filter(phone=obj.phone)
+        if resumes and len(resumes) > 0:
+            return mark_safe(u'<a href="/resumes/%s" target="_blank">%s</a' % (resumes[0].id, "查看简历"))
+        return ""
+
+    get_resume.short_description = '查看简历'
+    get_resume.allow_tags = True
 
     # 当前用户是否有导出权限：
     def has_export_permission(self, request):

@@ -1,8 +1,8 @@
 from django.contrib import admin
 from jobs.models import Job, Resume
-from django.contrib import messages
 from interview.models import Candidate
 from datetime import datetime
+from django.contrib import messages
 
 
 class JobAdmin(admin.ModelAdmin):
@@ -25,10 +25,10 @@ def enter_interview_process(modeladmin, request, queryset):
         candidate_names = candidate.username + "," + candidate_names
         candidate.creator = request.user.username
         candidate.save()
-    messages.add_message(request, messages.INFO, '候选人: %s 已成功进入面试流程' % (candidate_names) )
+    messages.add_message(request, messages.INFO, '简历已经进入面试环节')
 
 
-enter_interview_process.short_description = u"进入面试流程"
+enter_interview_process.short_description = "进入面试流程"
 
 
 class ResumeAdmin(admin.ModelAdmin):

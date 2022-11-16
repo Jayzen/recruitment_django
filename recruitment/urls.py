@@ -18,10 +18,12 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),
     path("", include("jobs.urls")),
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
 ]
+
 
 #网站admin后台的标题
 admin.site.site_header = '象科技招聘管理系统'

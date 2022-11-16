@@ -6,5 +6,6 @@ urlpatterns = [
     path("joblist/", views.joblist, name="joblist"),
     path("home/", views.joblist, name="joblist"),
     path('sign-up/', views.sign_up, name='sign_up'),
-    path('new-resume/', views.new_resume, name='new_resume'),
+    path('new-resume/', views.resume_new, name='resume_new'),
+    path('resumes/<int:resume_id>/', views.resume_detail, name='resume_detail'),
 ]
